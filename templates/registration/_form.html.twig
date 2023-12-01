@@ -1,0 +1,7 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(form) }}
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button class="btn btn-primary">{{ button_label|default('Créer') }}</button>
+    </div>
+{{ form_end(form) }}

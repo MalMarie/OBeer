@@ -1,0 +1,22 @@
+{% extends 'back/base_back.html.twig' %}
+
+{% block title %}Création de compte{% endblock %}
+
+{% block body %}
+<main>
+    <h1>Créer un compte</h1>
+
+    {{ include('registration/_form.html.twig') }}
+
+<div class="login_index">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <a class="fw-bold text-dark" href="{{ path('app_login')}}">Déjà un compte?</a>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <a class="fw-bold text-dark" href="{{ path('app_main_index') }}">Retour à la page d'accueil</a>
+    </div>
+</div>
+</main>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block body %}
+<main>
+<div class="container">
+          <h1>Nous contacter</h1>
+          <form>
+              
+              <div class="form-group">
+                <label for="nom">Entrez votre prénom & nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="Prenom NOM">
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Entrez votre mail</label>
+                <input type="email" class="form-control" id="email" placeholder="prenom.nom@monmail.com">
+              </div>
+              
+           
+              <div class="form-group">
+                <label for="message">Votre message</label>
+                <textarea class="form-control" id="bio" rows="3"></textarea>
+              </div>
+              
+              <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+              <button type="button" class="btn btn-light">Envoyer</button>
+              </div>
+          </form>
+      </div>
+      </main>
+{% endblock %}

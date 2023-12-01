@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Types de Bières {% endblock %}
+
+{% block body %}
+ <main>
+<!--Introductory text page-->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="container-fluid text-start "> 
+          <h1 class= "pag1"> Les différents types de bières</h1>
+
+            <h2 class="pag2"> Mais c’est quoi les ingrédients de cette potion magique ?</h2> 
+        
+          <p>4 ingrédients composent nos bières, de l’eau, du malt, du houblon et des levures. La magie opère en fonction du PH, de la température et du temps.</p>
+
+          <p>Eau : c’est notre base tout peut changer en fonction des minéraux qu’elle contient et son PH.</p>
+          <p>Malt : céréale germée puis chauffée, apporte les sucres, les enzymes et les protéines, mais aussi la couleur.</p>
+          <p>Houblon: diffuse son amertume et ses arômes tout en protégeant la bière des micro-organismes indésirables.</p>
+          <p>Levures : transforment les sucres en alcool et génèrent du gaz carbonique qui fait pétiller la bière. Lors de ce processus, la fermentation, elles donnent également du goût à la bière.</p>
+
+              <h3 class="pag3">D’accord, on a les ingrédients… et la suite?</h3>
+
+          <p>On passe au processus de brassage pour cela on passe par différentes étapes (concassage du malt, l'empâtage, filtrage du moût).</p>
+
+          <p>Concassage du malt : Le malt est moulu cela permet de libérer les l'amidon et les anzymes.</p>
+          <p>Empâtage : aprés le concassage les grains sont mélanger avec de l'eau entre 60 et 70°C en cuve de brassage. Cette étape dure environ 1 heure pour permettre l'extraction de l'amidon et des enzymes.</p>
+          <p>Filtrage du moût : le moût est obtenu suite à l'étape de l'empâtage. Il sera filtré grâce aux drêches ( grains de malt plongées dans le moult), ce filtre fonctionne comme un filtre à sable.</p>
+          <p >Notre future bière va ensuite passée par différentes étapes d'ébullitions et phases de refroidisements on nous pourrons y incorporer le houblon amérisant (amertume et fraicheur) et houblon aromatique pour l'arôme houblonné. 
+          Après avoir refroidit, les levures sont ajoutées et nous pouvons maintenant attendre entre 3 et 4 semaines avant la première dégustation.<p>
+
+        </div>
+
+      </div>
+    </div>  
+
+<!--Carousel beer type-->
+    <div class="container">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+
+<!--Caroussel - bottom buton-->  
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+<!--Carousel content-->
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="{{ asset('images/Types_bieres_blanche.png')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Blanches</h5>
+              <p> Brassage avec des malts pâles et des malts de froment</p>
+            </div>
+        </div>
+
+      <div class="carousel-item" data-bs-interval="2000">
+          <img src="{{ asset('images/Types_bieres_blonde.png')}}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Blondes</h5>
+          <p> Brassage avec des malts d’orge pâle.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="{{ asset('images/Types_bieres_rousse.png')}}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Ambrées ou rousses</h5>
+          <p>Brassage avec des malts dits “caramel” plus grillés et torréfiés que les bières blondes.</p>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="{{ asset('images/Types_bieres_brune.png')}}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Brunes</h5>
+          <p> Brassage avec des malts bruns, appelés malts “chocolat” fortement torréfiés qui leur confèrent un fort potentiel aromatique et des couleurs allant du marron au noir.</p>
+        </div>
+      </div>
+  </div>
+
+ <!--Buton right/buton left--> 
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+</main>
+{% endblock %}

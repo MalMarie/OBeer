@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_back_brewerie_delete', {'id': brewerie.id}) }}" onsubmit="return confirm('Voulez-vous supprimer cet enregistrement ?');">
+    {# ajout d'un token CSRF "manuel" #}
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ brewerie.id) }}">
+    <button class="btn btn-danger m-2">Supprimer</button>
+</form>

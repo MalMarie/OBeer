@@ -1,0 +1,46 @@
+{% extends 'back/base_back.html.twig' %}
+
+{% block title %}Gestion des utilisateurs{% endblock %}
+
+{% block body %}
+    <h1>Gestion des utilisateurs</h1>
+
+    <p><a href="{{ path('app_main_back') }}">Retour à l'accueil du Backoffice</a></p>
+
+    {{ include('_flash_messages.html.twig') }}
+
+    <p><a class="btn btn-sm btn-primary" href="{{ path('app_back_user_new') }}">Ajouter un utilisateur</a></p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pseudo</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.pseudo }}</td>
+                <td>{{ user.email }}</td>
+               
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('app_back_user_show', {'id': user.id}) }}">show</a>
+                    <a class="btn btn-info btn-warning" href="{{ path('app_back_user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'back/base_back.html.twig' %}
+
+{% block title %}Ajouter une brasserie{% endblock %}
+
+{% block body %}
+
+    <h1>Ajouter une brasserie</h1>
+
+    {# on inclut un "fragment de template" (bonne pratique Symfo : commence par un underscore) #}
+    {{ include('back/brewerie/_form.html.twig') }}
+
+    <div class="d-flex justify-content-start">
+    
+        <a href="{{ path('app_back_brewerie_index') }}">
+            <button class="btn btn-info m-2">Retour à la liste</button>
+        </a>
+    
+    </div>
+    
+{% endblock %}

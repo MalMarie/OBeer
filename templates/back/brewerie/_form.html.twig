@@ -1,0 +1,5 @@
+{# on n'oublie pas la suppression de la validation HTML5 ! #}
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
+{{ form_end(form) }}

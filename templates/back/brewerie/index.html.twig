@@ -1,0 +1,52 @@
+{% extends 'back/base_back.html.twig' %}
+
+{% block title %}Gestion des brasseries {% endblock %}
+
+{% block body %}
+
+<h1>Gestion des brasseries </h1>
+
+<p><a href="{{ path('app_main_back') }}">Retour à l'accueil du Backoffice</a></p>
+
+{{ include('_flash_messages.html.twig') }}
+
+<p><a class="btn btn-sm btn-primary" href="{{ path('app_back_brewerie_new') }}">Ajouter une brasserie</a>
+</p>
+
+<table class="table table-hover back-office-list">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            <th>Région</th>
+            <th>Site Internet</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for brewerie in breweries %}
+        <tr>
+            <td>{{ brewerie.name }}</td>
+            <td>{{ brewerie.address }}</td>
+            <td>{{ brewerie.zipcode }}</td>
+            <td>{{ brewerie.city }}</td>
+            <td>{{ brewerie.state }}</td>
+            <td>{{ brewerie.website }}</td>
+               <td><a class="btn btn-sm btn-success"
+                    href="{{ path('app_back_brewerie_show', {'id': brewerie.id}) }} ">Voir</a> 
+                   
+                <a class="btn btn-sm btn-warning"
+                    href="{{ path('app_back_brewerie_edit', {'id': brewerie.id}) }}">Modifier</a>
+                </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="10">no records found</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

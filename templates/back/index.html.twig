@@ -1,0 +1,17 @@
+{% extends 'back/base_back.html.twig' %}
+
+{% block title %}Backoffice{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Bienvenue dans le Backoffice de O'Beer</h1>
+
+    <div class="sm d-grid gap-2 md d-grid gap-2 lg d-grid gap-2 d-md-block text-center xl d-grid gap-2 d-md-block text-center xxl d-grid gap-2 d-md-block text-center ">
+        <button class="btn btn-primary align-middle mt-4 mb-5 ">
+            <a class="fw-bolder text-decoration-none link-light link-offset-2" href="{{ path('app_back_user_index') }}">Gestion des Utilisateurs</a>
+        </button>
+        <button class="btn btn-primary align-middle mt-4 mb-5" type="button">
+            <a class="fw-bolder text-decoration-none link-light link-offset-2" href="{{ path('app_back_brewerie_index') }}">Gestion des Brasseries</a>
+        </button>
+    </div>
+
+{% endblock %}

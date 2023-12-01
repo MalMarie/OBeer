@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Site de référencement des micro-brasseries de France métropolitaine">
+
+    <!--Bootstrap meta responsive viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{{ asset('icones/biere.png')}}">
+    
+
+    <!--Reset CSS-->
+    <link rel="stylesheet" href=" {{ asset('css/reset.css') }} "> 
+    
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!--Style CSS-->
+    <link rel="stylesheet" href=" {{ asset('css/styles.css') }}">
+
+    <!--Style map-->
+        <link rel="stylesheet" href=" {{ asset('css/carte.css') }}">
+    
+    <!--Style prevention-->
+    <link rel="stylesheet" href=" {{ asset('css/popup.css') }}">
+
+</head>
+<body>
+
+     
+<header>
+    <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <div class="container-fluid">
+            <!--Logo-->
+            <a class="navbar-brand" href=" {{ path('app_main_index')}}"><img src="{{ asset('images/Logo_O-Beer.svg')}}" alt="Logo de O'Beer"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse mt-5" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href=" {{ path('app_main_index')}}">Accueil</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href=" {{ path('app_main_histoire')}}">Un peu d'histoire</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href=" {{ path('app_type_index')}}">Types de bières</a></li>
+
+                    {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item"><a class="nav-link" href=" {{ path('app_favorites_list')}}">Mes Favoris</a></li>
+                    {% endif %}
+                {# </ul> #}
+                
+    <!--Dropdown-->
+        {# user connected #}
+        {% if is_granted('ROLE_ADMIN') %}
+        <div id="dropdown" class="dropdown navbar-brand">
+            
+                <ul class="dropdown-menu navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ path('app_logout') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <span>{{ app.user.pseudo }}</span>
+                            <i class="bi bi-person-square"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">  
+                            <li>
+                                <h6 class="dropdown-header text-light fst-italic">
+                                    Administrateur
+                                </h6>
+                            </li>
+                            <li>
+                                <a class="dropdown-item fw-bolder " href="{{ path('app_logout') }}">Se déconnecter</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item fw-bolder" href="{{ path('app_main_back') }}">Backoffice</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item fst-italic" href="{{ path('app_back_user_index') }}">Utilisateurs</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item fst-italic" href="{{ path('app_back_brewerie_index') }}">Brasseries</a>
+                            </li>
+                        </ul>
+                        </li>
+                        </ul>
+        </div>
+            
+            {% elseif is_granted('ROLE_USER') %}
+            <div id="dropdown" class="dropdown navbar-brand">
+              
+                    <ul class="dropdown-menu navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{{ path('app_logout') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                <span>{{ app.user.pseudo }}</span>
+                                <i class="bi bi-person-square"></i>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><h6 class="dropdown-header text-light fst-italic">Membre</h6></li>
+                            <li>
+                                <a class="dropdown-item fw-bolder" href="{{ path('app_logout') }}">Se déconnecter</a>
+                            </li>
+                        </ul>
+                    </ul>
+            </div>
+
+
+
+            {% else %}
+        {# user disconnected #}
+        <!--Dropdown form-->
+            <div id="dropdown" class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >Connexion</button>
+                <div  class="dropdown-menu">
+    
+                            <a class="dropdown-item" href="{{ path('app_login')}}">Se connecter</a>
+
+                            <a class="dropdown-item" href="{{ path('app_user_new')}}"> S'inscrire</a>
+                </div>
+            {% endif %}
+            </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+    {% include "_popup.html.twig" %}
+    <main id="main">
+        {% block body %}
+        
+        {% endblock %}
+  
+    </main>
+
+    <!--Footer-->
+    <footer class="container-fluid">
+        <div class="row justify-content-center text-center">
+            <div class="col-9 links">
+
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href=" {{ path('app_main_mentions_legales')}}" class="footer-menu" aria-label="Page mentions légales">Mentions légales</a></li>
+                    <li class="list-inline-item"><a href=" {{ path('app_main_equipe')}}" class="footer-menu" aria-label="Page présentation de l'équipe">La team</a></li>
+
+                    <li class="list-inline-item"><a href=" {{ path('app_main_contacts')}}" class="footer-menu" aria-label="Page de contact">Nous contacter</a></li>
+                </ul>
+            </div>
+        </div>
+</footer>
+
+<!--Bootstrap JS-->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!--JS map-->
+<script src="{{ asset('js/carte.js') }}"></script>
+<script src="{{ asset('js/loader.js') }}"></script>
+
+<!-- JS Pop-up-->
+<script src="{{ asset('js/popup2.js') }}"></script>
+
+</body>
+</html>
+
+

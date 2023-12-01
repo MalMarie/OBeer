@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Team{% endblock %}
+
+{% block body %}
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="container-fluid text-center "> 
+        <h1>La team</h1>
+      </div>
+
+
+        <div class="container-fluid">
+          <div class="row justify-content-start align-items-center">
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('images/Marie.png')}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Marie MALNOURY</p>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('images/Miguel.JPG')}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Miguel MARTINEL</p>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('images/roxane.png')}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Roxane DELORT</p>
+                </div>
+              </div>
+
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ asset('images/Will.jpg')}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">William QUELEVER</p>
+                </div>
+              </div>
+          </div>
+        </div>
+</main>
+{% endblock %}

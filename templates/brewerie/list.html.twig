@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste des brasseries locales en France{% endblock %}
+
+{% block body %}
+
+<div class="container-xl  p-5">
+
+    {# <div class="row mb-2"> #}
+    
+
+        <div class="col-12 col-lg-12">
+
+            {% for brewerie in breweries %}
+
+            <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm bg-white position-relative">
+                
+                <div class="p-4 d-flex flex-column position-static text-center">
+                    <a href=" {{ path('app_favorites_add', {id:brewerie.id}) }} " class="fs-1 my-2 mx-3 link-danger"><i
+                        class="bi bi-bookmark-x"></i>
+                        </a>
+                    <strong class="d-inline-block mb-2 text-primary">Brasserie</strong>
+                    <h3 class="fs-2 fw-bolder text-warning mb-1 "> {{ brewerie.name }} </h3>
+                    {% dump(brewerie.name) %}
+                    <div class="mb-1 text-secondary"> {{ brewerie.name }} </div>
+                    <div class="mb-1 text-secondary"> {{ brewerie.address }} </div>
+                    <div class="mb-1 text-secondary"> {{ brewerie.city }} </div>
+                    <div class="mb-1 text-secondary"> {{ brewerie.state }} </div>
+                    <div class="mb-1 text-secondary">
+                        <a class="fst-italic text-muted" href="{{ brewerie.website }}" target="_blank" alt="site internet de {{ brewerie.name }}">{{ brewerie.website }}</a>  
+                    </div>
+                           
+      
+                    <a href=" {{ path('app_brewerie_show', {id: brewerie.id} ) }}" class="fs-1 mt-3 text-danger align-self-start">
+                        <i class="bi bi-arrow-right-square"></i>
+                    </a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+</div> 
+
+{% endblock %}

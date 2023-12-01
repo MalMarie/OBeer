@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HELLO TEAM O'BEER{% endblock %}
+
+{% block body %}
+
+<!-- main -->
+<main>
+<div class="container bg-light p-5 border-top">
+    <div class="row mb-2">
+        <div class="col-12 col-lg-3">
+            <h2 class="text-center text-muted fw-bold mb-4">Les types de bières</h2>
+
+              <ul class="d-flex flex-column flex-wrap list-unstyled justify-content-center">
+                <li class="btn btn-sm btn-outline-danger mx-1 mb-2">Blondes</li>
+                <li class="btn btn-sm btn-outline-danger mx-1 mb-2">Brunes</li>
+                <li class="btn btn-sm btn-outline-danger mx-1 mb-2">Ambrée</li>
+                <li class="btn btn-sm btn-outline-danger mx-1 mb-2">Triple</li>
+                <li class="btn btn-sm btn-outline-danger mx-1 mb-2">IPA</li>
+                <li class="btn btn-sm btn-outline-danger mx-1 mb-2">Autres ...</li>
+                </ul>
+        </div>
+
+    <div class="col-12 col-lg-9">
+
+            <h2 class="text-muted fw-bold mb-4">Bienvenue à O'Beer </h2>
+
+        {% for brewerie in breweries %}
+
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm bg-white position-relative">
+                
+            <div class="col-8 p-4 d-flex flex-column position-static">
+                        <a href="{{ path('app_favorites_add', {id: brewerie.id}) }}" class="movie__favorite fs-1 my-2 mx-3 link-danger"><i class="bi bi-bookmark-plus"></i></a>
+                            <strong class="d-inline-block mb-2 text-primary">Brasserie</strong>
+                <h3 class="mb-1"> {{ brewerie.name }} </h3>
+                <div class="mb-1 text-muted"> {{ brewerie.name }} </div>
+                    <div class="mb-1 text-muted"> {{ brewerie.address }} </div>
+                    <div class="mb-1 text-muted"> {{ brewerie.city }} </div>
+                    <div class="mb-1 text-muted"> {{ brewerie.state }} </div>    
+      
+                        <a href="{{ path('app_brewerie_show', {id: brewerie.id} ) }}" class="fs-1 mt-3 text-danger align-self-start">
+                        <i class="bi bi-arrow-right-square"></i>
+                        </a>  
+                    </div>
+                </div>
+        {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

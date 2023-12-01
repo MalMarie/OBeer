@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La team</title>
+    <link rel="icon" href="./icones/biere.png">
+
+        <!--Bootstrap meta responsive viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Accueil</title>
+        <link rel="icon" href="./icones/biere.png">
+        
+        <!--Bootstrap CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!--Reset CSS-->
+    <link rel="stylesheet" href="reset.css"> 
+
+    <!--Style CSS-->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+ 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-dark">
+            <div class="container-fluid">
+                <!--Logo-->
+                <a class="navbar-brand" href="index.html"><img src="./images/Logo_O-Beer.svg" alt=""></a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Accueil</a></li>
+    
+                        <li class="nav-item"><a class="nav-link" href="histoire.html">Un peu d'histoire</a></li>
+    
+                        <li class="nav-item"><a class="nav-link" href="types-biere.html">Types de bières</a></li>
+                    </ul>
+                </div>
+    
+        <!--Dropdown-->
+             <div id="dropdown" class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >Connexion</button>
+    
+    
+    <!--Formulaire Dropdown-->
+            <div  class="dropdown-menu">
+                <form class="px-4 py-3">
+                <div class="form-group">
+    
+                <label for="exampleDropdownFormEmail1">Adresse Email</label>
+                    <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                </div>
+    
+            <div class="form-group">
+                <label for="exampleDropdownFormPassword1">Mot de passe</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+            </div>
+    
+                <button id="validate-button" type="submit" class="btn btn-primary">Valider</button>
+            </form>
+            <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Nouveau? S'inscrire</a>
+                    </div>
+                          </div>
+                       <!--</ul>-->
+            </div>
+        </nav>
+        </header>
+<main>
+  <div class="container">
+      <div class="row">
+        <div class="container-fluid text-center "> 
+            <h1>La team</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-start align-items-center">
+        
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="images/Marie.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Marie MALNOURY</p>
+                </div>
+        </div>
+        
+        <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('images/Miguel.JPG')}}" alt="Card image cap">
+                <div class="card-body">
+                      <p class="card-text">Miguel MARTINEL</p>
+                </div>
+        </div>
+        
+        <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('images/roxane.png')}}" alt="Card image cap">
+                <div class="card-body">
+                      <p class="card-text">Roxane DELORT</p>
+                </div>
+        </div>
+        
+        <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{ asset('images/Will.jpg')}}" alt="Card image cap">
+                <div class="card-body">
+                      <p class="card-text">William QUELEVER</p>
+                </div>
+          </div>
+      </div>
+    </div>
+</main>
+    <!--Pied de page-->
+
+    <footer class="container-fluid">
+        <div class="row justify-content-center text-center">
+            <div class="col-9 links">
+                <ul class="list-inline">
+
+        <li class="list-inline-item"><a href="mentions-legales.html" class="footer-menu" aria-label="Page mentions légales">Mentions légales</a></li>
+         <li class="list-inline-item"><a href="team.html" class="footer-menu" aria-label="Page présentation de l'équipe">La team</a></li>
+
+        <li class="list-inline-item"><a href="contact.html" class="footer-menu" aria-label="Page de contact">Nous contacter</a></li>
+        </ul>
+        </div>
+        </div>
+</footer>
+</body>
+</html>

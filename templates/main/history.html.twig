@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Histoire{% endblock %}
+
+{% block body %}
+
+<main>
+<!--Introductory text page-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="container-fluid text-start "> 
+        <h1 class="parag1">Qui a eu cette idée folle d’un jour inventer la bière ?</h1>
+      </div>
+      
+      <div class="text-start">   
+        <p>Ce breuvage ne date pas d’hier, en effet les premières traces de son existence remontent à environ 4000 ans avant J-C en Mésopotamie.
+        Et depuis elle a su traverser le temps, sous l’ancienne Egypte la bière est considérée comme divine et sera préparée par des femmes et servie par des prêtresses.
+        Durant l’antiquité elle sera considérée comme médicinale par les grecs.C'est au XII ème siècle que le houblon, plante réputée pour ses vertus antiseptiques, fit une apparition dans la fabrication de la bière. A ce jeu là, les moines se montreront experts. Et certains noms d'abbayes traverseront les siècles. </p>
+        <p>Au Moyen-Âge, la bière s'épanouit principalement dans le Nord, chez les peuples anglo-saxons.En France,la fabrication de la bière est codifiée réglementée.Elle est fabriquée uniquement par des maitres brasseurs à partir des ingrédients suivants : du grain, de l'eau et du houblon.
+        En 1854 Pasteur s'intéresse à la chimie de la fermentation et met à jour l'existence de micro-organismes dans la levure,ce qui permet de maîtriser le processus de la fermentation alcoolique et d'améliorer les conditions sanitaires des brasseries afin de produire une boisson plus saine et plus claire.La bière peut maintenant etre conservé loin de son lieu de fabrication.</p>
+        <p>De nos jours, le goût de la bière est devenu plus doux et attire une nouvelle clientèle.
+        Dorénavant, le brassage de la bière et la distribution se font à une plus grande échelle,ce qui nous permet d'avoir des bières aux goûts variés et consommeé dans les quatre coins du monde.La fabrication de la bière est maintenant presque totalement automatisée dans la plupart de ses étapes de fabrication, le nombre de brasseries traditionnelles est en déclin. Les nouvelles technologies et la recherche permettent d'obtenir un produit de très bonne qualité.</p>
+      </div> 
+   </div> 
+ </div>
+
+<!--Caroussel Anecdotes-->
+<div class="container">
+   <div id="carouselExampleDark" class="carousel carousel-dark slide">
+
+<!--Caroussel - bottom buton-->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+<!--Carousel content-->
+         <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="{{ asset('images/Annecdotes.png')}}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+        <h5>ANNECDOTE #1</h5>        
+        <p> Avant 2011, en Russie la bière n'était pas reconnue comme une boisson alcoolisée. Toutes boissons avec un taux d'alcool inférieur à 10% est considérée comme une denrée alimentaire</p>
+          </div> 
+        </div>
+
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="{{ asset('images/Annecdotes.png')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>ANNECDOTE #2</h5>
+              <p> Le champion du monde de porter d'épouse a remporté le poids de sa femme en bière</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="{{ asset('images/Annecdotes.png')}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>ANNECDOTE #3</h5>
+              <p>La Snake Venom  est la bière la plus forte au monde,son taux d'alcool est de 67.5 degrés</p>
+            </div>
+          </div>  
+        </div>
+ <!--Buton right/buton left-->       
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</main>
+{% endblock %}
